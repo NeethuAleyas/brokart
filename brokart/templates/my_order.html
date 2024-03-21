@@ -1,0 +1,13 @@
+{% load static %}
+{% include 'blank_layout.html' %}
+{% include 'header.html' %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <p class="{{ message.level_tag }}">{{ message }}</p>
+        {% endfor %}
+    {% else %}
+        {% include 'my_order_content.html' %}
+    {% endif %}
+{% endblock %}
+{% include 'footer.html' %}
